@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   ArrowLeft,
@@ -9,12 +9,16 @@ import {
   Briefcase,
   CreditCard,
   Info,
+  AlertCircle,
 } from "lucide-react";
 import { filieresDetails } from "./filieres";
+import ModalImportant from "../../components/modal/ModalImportant";
 
 export default function FiliereDetail() {
   const { id } = useParams(); // Récupère l'id de l'URL
   const data = filieresDetails[id];
+
+  const [isOpen, setIsOpen] = useState(false);
 
   console.log("Data :", data);
 
@@ -44,6 +48,13 @@ export default function FiliereDetail() {
             <p className="text-xl text-gray-600 leading-relaxed mb-12">
               {data.description}
             </p>
+
+            <div className="flex gap-4 mb-6 bg-blue-400 w-fit text-white px-4 py-3 rounded-md animate-pulse duration-75 hover:-translate-y-2">
+              <button onClick={() => setIsOpen(true)}>
+                Lire les conditions d'inscription
+              </button>
+              <AlertCircle />
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               <div className="p-8 bg-gray-50 rounded-[2rem] border border-gray-100">
@@ -80,62 +91,71 @@ export default function FiliereDetail() {
               </div>
 
               <div className="space-y-4">
-                {data.paiement.map((p, i) => (
-                  <div
-                    key={i}
-                    className="flex justify-between items-center p-4 bg-white rounded-2xl border border-gray-100 group hover:border-emerald-300 transition-all shadow-sm"
-                  >
-                    <div className="flex flex-col">
-                      <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">
-                        {p.type === "Mensualité"
-                          ? "Frais Mensuels"
-                          : "Frais Uniques"}
-                      </span>
-                      <div className="flex items-center gap-2">
-                        <span className="font-bold text-gray-800">
-                          {p.type}
-                        </span>
-                        {/* Badge réduction si un montant réduit existe */}
-                        {p.montantReduit && (
-                          <span className="text-[10px] bg-red-100 text-red-600 px-2 py-0.5 rounded-full font-bold animate-pulse">
-                            PROMO
-                          </span>
-                        )}
-                      </div>
-                    </div>
+                {data.paiement.map((p, i) => {
+                  // On normalise le test pour détecter si c'est une mensualité
+                  const isMensualite = p.type
+                    .toLowerCase()
+                    .includes("mensualite");
 
-                    <div className="text-right">
-                      <div className="flex flex-col items-end">
-                        {/* Si réduction : afficher le prix barré au-dessus */}
-                        {p.montantReduit ? (
-                          <>
-                            <span className="text-sm text-gray-400 line-through decoration-red-400">
-                              {p.montant.toLocaleString()} FCFA
+                  return (
+                    <div
+                      key={i}
+                      className="flex justify-between items-center p-4 bg-white rounded-2xl border border-gray-100 group hover:border-emerald-300 transition-all shadow-sm"
+                    >
+                      <div className="flex flex-col">
+                        {/* Label dynamique */}
+                        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">
+                          {isMensualite
+                            ? "Frais Mensuels"
+                            : "Frais d'admission"}
+                        </span>
+
+                        <div className="flex items-center gap-2">
+                          <span className="font-bold text-gray-800 capitalize">
+                            {p.type}
+                            <em className="font-semibold"> {p.niveau}</em>
+                          </span>
+
+                          {/* Badge Promo */}
+                          {p.montantReduit && (
+                            <span className="text-[9px] bg-red-100 text-red-600 px-2 py-0.5 rounded-full font-black animate-pulse">
+                              PROMO
                             </span>
-                            <div className="flex items-baseline">
-                              <span className="text-xl font-black text-emerald-600">
-                                {p.montantReduit.toLocaleString()}
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="text-right">
+                        <div className="flex flex-col items-end">
+                          {p.montantReduit ? (
+                            <>
+                              <span className="text-xs text-gray-400 line-through decoration-red-400">
+                                {p.montant.toLocaleString()} FCFA
                               </span>
-                              <span className="ml-1 text-xs font-bold text-emerald-900/50">
-                                FCFA
+                              <div className="flex items-baseline text-emerald-600">
+                                <span className="text-xl font-black">
+                                  {p.montantReduit.toLocaleString()}
+                                </span>
+                                <span className="ml-1 text-[10px] font-bold uppercase">
+                                  FCFA {isMensualite && "/ mois"}
+                                </span>
+                              </div>
+                            </>
+                          ) : (
+                            <div className="flex items-baseline text-emerald-600">
+                              <span className="text-xl font-black">
+                                {p.montant.toLocaleString()}
+                              </span>
+                              <span className="ml-1 text-[10px] font-bold text-emerald-900/40 uppercase">
+                                FCFA {isMensualite && "/ mois"}
                               </span>
                             </div>
-                          </>
-                        ) : (
-                          /* Sinon : afficher le prix normal */
-                          <div className="flex items-baseline">
-                            <span className="text-xl font-black text-emerald-600">
-                              {p.montant.toLocaleString()}
-                            </span>
-                            <span className="ml-1 text-xs font-bold text-emerald-900/50">
-                              FCFA
-                            </span>
-                          </div>
-                        )}
+                          )}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {/* Petit bandeau d'information supplémentaire */}
@@ -203,6 +223,7 @@ export default function FiliereDetail() {
           </div>
         </div>
       </div>
+      <ModalImportant isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </div>
   );
 }

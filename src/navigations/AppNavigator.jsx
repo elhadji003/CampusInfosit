@@ -6,6 +6,9 @@ import Layout from "../Layout/Layout";
 import Blog from "../pages/Blog";
 import About from "../pages/About";
 import FiliereDetail from "../pages/filieres/FiliereDetail";
+import Contact from "../pages/Contact";
+import Alumni from "../pages/Alumni";
+import Administration from "../pages/Administration";
 
 export default function AppNavigator() {
   return (
@@ -13,11 +16,14 @@ export default function AppNavigator() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/filieres" element={<Filieres />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/filieres" element={<Filieres />} />
+        <Route path="/administration" element={<Administration />} />
+        <Route path="/filiere/:id" element={<FiliereDetail />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/alumni" element={<Alumni />} />
 
         {/* filieres */}
-        <Route path="/filiere/:id" element={<FiliereDetail />} />
       </Route>
     </Routes>
   );

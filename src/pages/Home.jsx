@@ -12,20 +12,35 @@ import {
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"; // N'oublie pas : npm install framer-motion
+import LogoSn from "../assets/image/senegal.png";
+import LogoSante from "../assets/image/sante-logo.png";
+import Infosits from "../assets/image/Infosits.jpg";
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
+      {/* <Navbar /> */}
+
+      <header className="flex justify-around items-start relative pt-20 pb-20 lg:pt-20 lg:pb-16 px-6 overflow-hidden">
+        <img
+          src={LogoSante}
+          alt="logo - senegal"
+          className="h-28 max-sm:w-40 max-sm:h-20"
+        />
+        <img
+          src={LogoSn}
+          alt="logo - Sante"
+          className="w-40 max-sm:w-40 max-sm:h-20"
+        />
+      </header>
 
       {/* --- SECTION HERO AMÉLIORÉE --- */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 overflow-hidden">
+      <section className="relative pb-20 lg:pb-32 px-6 overflow-hidden">
         {/* Arrière-plan décoratif animé */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10">
           <div className="absolute top-24 left-10 w-72 h-72 bg-emerald-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"></div>
           <div className="absolute top-40 right-10 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
         </div>
-
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
           {/* Texte avec animation d'entrée */}
           <motion.div
@@ -41,7 +56,7 @@ const Home = () => {
               </span>
             </h1>
 
-            <p className="mt-8 text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="mt-8 text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 max-sm:text-sm">
               Une plateforme pensée pour les étudiants et le personnel de la
               santé. Suivi académique, informations en temps réel et outils
               pédagogiques réunis pour vous accompagner vers l’excellence
@@ -111,7 +126,6 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
-
       {/* --- SECTION STATS (Look Sombre/Premium) --- */}
       <section className="bg-emerald-900 py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center relative z-10">
@@ -138,7 +152,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-
       {/* --- SECTION ACTUALITÉS (Design épuré) --- */}
       <section id="infos" className="py-24 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
@@ -163,14 +176,14 @@ const Home = () => {
             {[1, 2, 3].map((n) => (
               <article
                 key={n}
-                className="group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col"
+                className="group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 flex flex-col"
               >
                 <div className="h-60 bg-emerald-50 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-emerald-600/10 group-hover:bg-transparent transition-colors"></div>
+                  <div className="absolute inset-0 bg-emerald-600/50 group-hover:bg-transparent transition-colors"></div>
                   <img
-                    src={`https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop`}
+                    src={Infosits}
                     alt="news"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-600"
                   />
                 </div>
                 <div className="p-8 flex-1 flex flex-col">

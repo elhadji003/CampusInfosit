@@ -62,17 +62,6 @@ const filieresData = [
     icon: <Heart className="w-8 h-8 text-orange-500" />, // Pense à importer Heart
     color: "bg-orange-50",
   },
-  {
-    id: 6,
-    slug: "aide-soignant",
-    nom: "Secrétariat Médical", // Je suppose une 6ème filière pour éviter les doublons
-    complet: "Gestion et Secrétariat Médical",
-    description:
-      "Gérez l'accueil et l'organisation administrative des structures de santé. Le lien indispensable entre les patients et le corps médical.",
-    icon: <PencilRuler className="w-8 h-8 text-indigo-500" />,
-    color: "bg-indigo-50",
-  },
-  { id: 6, nom: "Secrétariat Médical", slug: "secretariat-medical" },
 ];
 
 export default function Filieres() {
@@ -108,7 +97,7 @@ export default function Filieres() {
               {/* Contenu */}
 
               <h4 className="text-xl font-extrabold text-gray-900 mb-4">
-                {filiere.complet || filiere.nom}
+                {filiere.nom}
               </h4>
               <p className="text-gray-600 leading-relaxed mb-6">
                 {filiere.description}

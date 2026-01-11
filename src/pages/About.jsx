@@ -9,7 +9,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import imageAbout from "../assets/image/about.png";
+import imageAbout from "../assets/image/about.jpg";
 import MapSection from "../components/MapSection";
 import Partenaires from "../components/Partenaires";
 
@@ -65,11 +65,11 @@ export default function Apropos() {
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
-            <div className="aspect-square bg-emerald-700 rounded-[3rem] overflow-hidden">
+            <div className="aspect-square bg-emerald-700 rounded-[3rem] overflow-hidden group-hover:scale-75">
               <img
                 src={imageAbout}
                 alt="Formation INFOSITS"
-                className="w-full h-full object-cover mix-blend-overlay opacity-100"
+                className="w-full h-full object-cover mix-blend-overlay opacity-100 hover:scale-105 duration-700"
               />
             </div>
             {/* Petit badge d'expérience flottant */}

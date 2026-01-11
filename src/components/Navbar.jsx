@@ -11,6 +11,7 @@ export default function Navbar() {
     { name: "À propos", href: "/about" },
     { name: "Blog", href: "/blog" },
     { name: "Filières", href: "/filieres" },
+    { name: "Administration", href: "/administration" },
   ];
 
   return (
@@ -44,24 +45,30 @@ export default function Navbar() {
 
         {/* Buttons section */}
         <div className="flex items-center gap-3">
-          <button className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-white hover:scale-105 transition-all active:scale-95 shadow-md">
+          <button className="hidden md:flex lg:flex items-center gap-2 bg-emerald-50 text-emerald-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-white hover:scale-105 transition-all active:scale-95 shadow-md">
             <LogIn size={18} />
-            <span className="hidden sm:inline">Connexion</span>
+            <span className="sm:inline">Connexion</span>
           </button>
 
-          <button className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-white hover:scale-105 transition-all active:scale-95 shadow-md">
+          <Link
+            to={"/alumni"}
+            className="hidden md:flex lg:flex items-center gap-2 bg-emerald-50 text-emerald-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-white hover:scale-105 transition-all active:scale-95 shadow-md"
+          >
             <span className="hidden sm:inline">
               <User2 />
             </span>
             <span className="hidden sm:inline">Alumnie</span>
-          </button>
+          </Link>
 
-          <button className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-white hover:scale-105 transition-all active:scale-95 shadow-md">
-            <span className="hidden sm:inline">
+          <Link
+            to={"/contact"}
+            className="hidden md:flex lg:flex items-center gap-2 bg-emerald-50 text-emerald-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-white hover:scale-105 transition-all active:scale-95 shadow-md"
+          >
+            <span>
               <Contact2 />
             </span>
             <span className="hidden sm:inline">Nous Contactez</span>
-          </button>
+          </Link>
 
           {/* Mobile Toggle */}
           <button
@@ -90,6 +97,32 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+        </div>
+        <div className="flex justify-center items-center gap-3 mt-6">
+          <button className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-white hover:scale-105 transition-all active:scale-95 shadow-md">
+            <LogIn size={18} />
+            <span className="hidden sm:inline">Connexion</span>
+          </button>
+
+          <Link
+            to={"/alumni"}
+            className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-white hover:scale-105 transition-all active:scale-95 shadow-md"
+          >
+            <span>
+              <User2 />
+            </span>
+            <span>Alumnie</span>
+          </Link>
+
+          <Link
+            to={"/contact"}
+            className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-white hover:scale-105 transition-all active:scale-95 shadow-md"
+          >
+            <span className="hidden sm:inline">
+              <Contact2 />
+            </span>
+            <span className="">Nous Contactez</span>
+          </Link>
         </div>
       </div>
     </header>
