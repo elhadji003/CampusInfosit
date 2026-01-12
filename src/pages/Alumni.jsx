@@ -6,7 +6,9 @@ import {
   Quote,
   ExternalLink,
   Trophy,
+  Send,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Alumni = () => {
   const successStories = [
@@ -145,6 +147,27 @@ const Alumni = () => {
           ))}
         </div>
       </section>{" "}
+      {/* --- BANDEAU REJOINDRE LE RÉSEAU --- */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto bg-emerald-600 rounded-[3rem] p-12 text-center text-white shadow-2xl relative overflow-hidden">
+          <div className="relative z-10">
+            <h2 className="text-3xl font-bold mb-4">
+              Vous êtes un ancien de l'INFOSITS ?
+            </h2>
+            <p className="text-emerald-100 mb-8 max-w-2xl mx-auto">
+              Rejoignez l'annuaire officiel des Alumni pour accéder à des offres
+              d'emploi exclusives et rester connecté avec votre promotion.
+            </p>
+            <Link
+              to={"/alumni/registration"}
+              className="bg-white w-fit text-emerald-700 px-10 py-4 rounded-2xl font-black flex items-center gap-2 mx-auto hover:bg-emerald-50 transition-colors"
+            >
+              REJOINDRE LA COMMUNAUTÉ <Send size={20} />{" "}
+            </Link>
+          </div>
+          <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-emerald-500 rounded-full opacity-30 blur-3xl"></div>
+        </div>
+      </section>
     </div>
   );
 };

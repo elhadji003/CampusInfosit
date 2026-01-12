@@ -9,6 +9,7 @@ import FiliereDetail from "../pages/filieres/FiliereDetail";
 import Contact from "../pages/Contact";
 import Alumni from "../pages/Alumni";
 import Administration from "../pages/Administration";
+import AlumniRegistration from "../pages/AlumniRegistration";
 
 export default function AppNavigator() {
   return (
@@ -22,7 +23,7 @@ export default function AppNavigator() {
         <Route path="/filiere/:id" element={<FiliereDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/alumni" element={<Alumni />} />
-
+        <Route path="/alumni/registration" element={<AlumniRegistration />} />
         {/* filieres */}
       </Route>
     </Routes>

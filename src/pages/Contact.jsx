@@ -57,8 +57,8 @@ const Contact = () => {
                 },
                 {
                   icon: <Mail />,
-                  title: "Email",
-                  content: "contact@infosits-thies.com",
+                  title: "Email / Yahoo",
+                  content: "infosits@gmail.com / infosits@yahoo.fr",
                 },
                 {
                   icon: <Clock />,

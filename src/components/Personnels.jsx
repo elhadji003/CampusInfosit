@@ -5,7 +5,6 @@ import Rahman from "../assets/image/Rahman.png";
 import MmeTra from "../assets/image/MmeTra.png";
 
 export default function Personnels() {
-  // Vos données JSON (extrait des résultats)
   const personnelData = [
     {
       first_name: "Fallou",
@@ -26,7 +25,6 @@ export default function Personnels() {
       first_name: "AbdouRahman",
       last_name: "Ndiaye",
       role: "pp",
-      profile: Rahman,
       email: "ndiaye@infosits.com",
       genre: "M",
     },
@@ -36,6 +34,13 @@ export default function Personnels() {
       role: "gs_comptable",
       email: "ahmadoulaminef@gmail.com",
       genre: "M",
+    },
+    {
+      first_name: "Taye Mah",
+      last_name: "Cissoko",
+      role: "care",
+      email: "mataye27@gmail.com",
+      genre: "F",
     },
     {
       first_name: "Ndeye Diama",
@@ -94,11 +99,11 @@ export default function Personnels() {
       genre: "M",
     },
     {
-      first_name: "Taye Mah",
-      last_name: "Cissoko",
-      role: "care",
-      email: "mataye27@gmail.com",
-      genre: "F",
+      first_name: "Elhadji Malick",
+      last_name: "Diop",
+      role: "WebMaster",
+      email: "malickelhadji07@gmail.com",
+      genre: "M",
     },
   ];
 
@@ -116,71 +121,132 @@ export default function Personnels() {
   };
 
   return (
-    <section className="py-24 px-6 bg-white">
+    <section className="py-24 px-6 bg-gray-50/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-4xl font-black text-gray-900 uppercase tracking-tighter">
             Notre <span className="text-emerald-600">Personnel</span>
           </h2>
           <p className="text-gray-500 mt-4 text-lg">
-            L'équipe administrative de l'INFOSITS à votre écoute
+            L'excellence administrative au service de votre réussite
           </p>
         </div>
 
-        {/* Grille Flexbox : 4 colonnes sur PC (lg:w-1/4), 2 sur Tablette (sm:w-1/2) */}
-        <div className="flex flex-wrap -mx-4">
-          {personnelData.map((staff, index) => (
-            <div key={index} className="w-full sm:w-1/2 lg:w-1/4 p-4">
-              <div className="group bg-gray-50 rounded-[2.5rem] p-8 text-center border border-gray-100 hover:border-emerald-200 hover:bg-white hover:shadow-2xl hover:shadow-emerald-100 transition-all duration-500 h-full flex flex-col items-center">
-                {/* Photo de profil (Placeholder avec Initiale si pas d'image) */}
-                <div className="relative w-28 h-28 mb-6">
-                  <div className="absolute inset-0 bg-emerald-100 rounded-3xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
-                  <div className="relative w-full h-full bg-emerald-600 rounded-3xl shadow-inner flex items-center justify-center text-white text-3xl font-black border-4 border-white">
-                    {staff.profile ? (
-                      <img
-                        src={staff.profile}
-                        alt="profile-user"
-                        className="w-28 h-28 rounded-xl"
-                      />
-                    ) : (
-                      <p>
-                        {" "}
-                        {staff.first_name.charAt(0)}
-                        {staff.last_name.charAt(0)}
-                      </p>
-                    )}
-                  </div>
-                </div>
+        <div className="flex flex-wrap -mx-4 items-stretch">
+          {personnelData.map((staff, index) => {
+            const isDG = staff.role === "dg";
 
-                {/* Informations */}
-                <div className="flex-grow">
-                  <h4 className="text-xl font-bold text-gray-900 mb-2 leading-tight">
-                    {staff.genre === "M" ? "Mr" : "Mme"} {staff.first_name}{" "}
-                    <br />
-                    <span className="uppercase text-emerald-700">
-                      {staff.last_name}
-                    </span>
-                  </h4>
-                  <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-black uppercase tracking-widest mb-4">
-                    {roleLabels[staff.role] || staff.role}
-                  </div>
-                </div>
+            return (
+              <div
+                key={index}
+                className={`w-full p-4 transition-all duration-500 ${
+                  isDG ? "md:w-full lg:w-1/3 xl:w-1/4" : "sm:w-1/2 lg:w-1/4"
+                }`}
+              >
+                <div
+                  className={`group relative overflow-hidden rounded-[2.5rem] p-8 text-center border transition-all duration-500 h-full flex flex-col items-center ${
+                    isDG
+                      ? "bg-slate-900 border-slate-800 shadow-2xl shadow-slate-200 scale-105 z-10"
+                      : "bg-white border-gray-100 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-100"
+                  }`}
+                >
+                  {/* Effet brillant uniquement pour le DG */}
+                  {isDG && (
+                    <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/10 blur-3xl rounded-full"></div>
+                  )}
 
-                {/* Boutons de contact discrets */}
-                <div className="mt-6 flex gap-3 pt-6 border-t border-gray-100 w-full justify-center">
-                  <a
-                    href={`mailto:${staff.email}`}
-                    className="w-10 h-10 bg-white shadow-sm rounded-xl flex items-center justify-center text-gray-400 hover:text-emerald-600 hover:shadow-md transition-all"
+                  {/* Photo de profil */}
+                  <div className="relative w-32 h-32 mb-6">
+                    <div
+                      className={`absolute inset-0 rounded-3xl rotate-6 group-hover:rotate-12 transition-transform duration-500 ${
+                        isDG ? "bg-blue-500/20" : "bg-emerald-100"
+                      }`}
+                    ></div>
+
+                    <div
+                      className={`relative w-full h-full rounded-3xl shadow-xl flex items-center justify-center text-3xl font-black border-4 ${
+                        isDG
+                          ? "bg-gradient-to-br from-blue-600 to-indigo-700 border-slate-900 text-white"
+                          : "bg-emerald-600 border-white text-white"
+                      }`}
+                    >
+                      {staff.profile ? (
+                        <img
+                          src={staff.profile}
+                          alt="profile"
+                          className="w-full h-full object-cover rounded-2xl"
+                        />
+                      ) : (
+                        <span>
+                          {staff.first_name.charAt(0)}
+                          {staff.last_name.charAt(0)}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Informations */}
+                  <div className="flex-grow">
+                    <h4
+                      className={`text-xl font-bold mb-2 leading-tight ${
+                        isDG ? "text-white" : "text-gray-900"
+                      }`}
+                    >
+                      {staff.genre === "M" ? "Mr" : "Mme"} {staff.first_name}
+                      <br />
+                      <span
+                        className={`uppercase ${
+                          isDG ? "text-blue-400" : "text-emerald-700"
+                        }`}
+                      >
+                        {staff.last_name}
+                      </span>
+                    </h4>
+
+                    <div
+                      className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 shadow-sm ${
+                        isDG
+                          ? "bg-blue-600 text-white ring-4 ring-blue-600/20"
+                          : "bg-emerald-50 text-emerald-700"
+                      }`}
+                    >
+                      {isDG && (
+                        <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                      )}
+                      {roleLabels[staff.role] || staff.role}
+                    </div>
+                  </div>
+
+                  {/* Boutons de contact */}
+                  <div
+                    className={`mt-6 flex gap-3 pt-6 border-t w-full justify-center ${
+                      isDG ? "border-slate-800" : "border-gray-100"
+                    }`}
                   >
-                    <Mail size={18} />
-                  </a>
-                  <button className="w-10 h-10 bg-white shadow-sm rounded-xl flex items-center justify-center text-gray-400 hover:text-blue-500 hover:shadow-md transition-all">
-                    <Phone size={18} />
-                  </button>
+                    <a
+                      href={`mailto:${staff.email}`}
+                      className={`w-11 h-11 rounded-xl flex items-center justify-center transition-all ${
+                        isDG
+                          ? "bg-slate-800 text-blue-400 hover:bg-blue-600 hover:text-white"
+                          : "bg-gray-50 text-gray-400 hover:text-emerald-600 hover:bg-white hover:shadow-md"
+                      }`}
+                    >
+                      <Mail size={20} />
+                    </a>
+                    <button
+                      className={`w-11 h-11 rounded-xl flex items-center justify-center transition-all ${
+                        isDG
+                          ? "bg-slate-800 text-blue-400 hover:bg-blue-600 hover:text-white"
+                          : "bg-gray-50 text-gray-400 hover:text-blue-500 hover:bg-white hover:shadow-md"
+                      }`}
+                    >
+                      <Phone size={20} />
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
