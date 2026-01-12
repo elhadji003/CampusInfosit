@@ -40,7 +40,6 @@ export default function Personnels() {
     {
       first_name: "Ndeye Diama",
       last_name: "Diawara",
-      profile: MmeTra,
       role: "caissier",
       email: "diamadiawara.ndd@gmail.com",
       genre: "F",
