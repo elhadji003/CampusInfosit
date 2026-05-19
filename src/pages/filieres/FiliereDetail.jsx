@@ -43,7 +43,6 @@ export default function FiliereDetail() {
           <div className="flex-[2]">
             <h1 className="text-4xl md:text-6xl font-black text-gray-900 mb-6">
               {data.nom} <br />
-              <span className="text-emerald-600">INFOSITS Thiès</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-12">
               {data.description}
@@ -103,24 +102,18 @@ export default function FiliereDetail() {
                       className="flex justify-between items-center p-4 bg-white rounded-2xl border border-gray-100 group hover:border-emerald-300 transition-all shadow-sm"
                     >
                       <div className="flex flex-col">
-                        {/* Label dynamique */}
-                        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">
-                          {isMensualite
-                            ? "Frais Mensuels"
-                            : "Frais d'admission"}
-                        </span>
-
                         <div className="flex items-center gap-2">
                           <span className="font-bold text-gray-800 capitalize">
                             {p.type}
                             <em className="font-semibold"> {p.niveau}</em>
                           </span>
 
-                          {/* Badge Promo */}
-                          {p.montantReduit && (
+                          {p.montantReduit ? (
                             <span className="text-[9px] bg-red-100 text-red-600 px-2 py-0.5 rounded-full font-black animate-pulse">
                               PROMO
                             </span>
+                          ) : (
+                            ""
                           )}
                         </div>
                       </div>
@@ -157,6 +150,9 @@ export default function FiliereDetail() {
                   );
                 })}
               </div>
+              <div className="mt-4 flex justify-between items-center p-4 bg-white rounded-2xl border border-gray-100 group hover:border-emerald-300 transition-all shadow-sm">
+                {data.note}
+              </div>
 
               {/* Petit bandeau d'information supplémentaire */}
               <div className="mt-8 flex gap-3 p-4 bg-blue-50 rounded-2xl text-blue-800 text-xs leading-relaxed">
@@ -165,6 +161,14 @@ export default function FiliereDetail() {
                   Les frais d'inscription incluent l'assurance étudiante et
                   l'accès à la bibliothèque numérique pour toute l'année
                   académique.
+                </p>
+              </div>
+              <div className="mt-4">
+                <h1 className="text-sm font-semibold underline text-red-500">
+                  NB :
+                </h1>
+                <p className="text-sm text-red-500 font-bold">
+                  Les frais d’inscription déjà versés sont non remboursables.
                 </p>
               </div>
             </div>

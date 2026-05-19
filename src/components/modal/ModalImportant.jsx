@@ -1,6 +1,13 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Info, CheckCircle2, AlertCircle, FileText } from "lucide-react";
+import {
+  X,
+  Info,
+  CheckCircle2,
+  AlertCircle,
+  FileText,
+  StopCircle,
+} from "lucide-react";
 
 export default function RegistrationRulesModal({ isOpen, onClose }) {
   if (!isOpen) return null;
@@ -33,6 +40,11 @@ export default function RegistrationRulesModal({ isOpen, onClose }) {
         "Respect du règlement intérieur de l'INFOSITS",
       ],
       icon: <CheckCircle2 className="text-blue-500" size={20} />,
+    },
+    {
+      title: "NB",
+      items: ["Les frais d’inscription déjà versés sont non remboursables"],
+      icon: <StopCircle className="text-red-500" size={20} />,
     },
   ];
 

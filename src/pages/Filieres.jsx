@@ -10,59 +10,8 @@ import {
   Heart,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { filieresData } from "./FilieresData";
 
-const filieresData = [
-  {
-    id: 1,
-    slug: "sage-femme",
-    nom: "Sage-Femme",
-    complet: "Diplôme d'État de Sage-Femme",
-    description:
-      "Accompagnez la vie avec expertise. Une formation complète pour assurer le suivi de la grossesse, l'accouchement et les soins postnataux de la mère et du nouveau-né.",
-    icon: <Users className="w-8 h-8 text-pink-600" />, // Changé pour Users ou Heart
-    color: "bg-pink-50",
-  },
-  {
-    id: 2,
-    slug: "infirmier",
-    nom: "Infirmier d'État",
-    complet: "Sciences Infirmières et Obstétricales",
-    description:
-      "Devenez le pilier du système de santé. Apprenez à prodiguer des soins infirmiers de haute qualité, à gérer les urgences et à assurer le bien-être des patients.",
-    icon: <Activity className="w-8 h-8 text-red-500" />,
-    color: "bg-red-50",
-  },
-  {
-    id: 3,
-    nom: "DVS",
-    slug: "dvs",
-    complet: "Délégué Médical et Vente de Santé",
-    description:
-      "Faites le pont entre la science et le marché. Maîtrisez la communication médicale et la promotion éthique des produits de santé auprès des professionnels.",
-    icon: <Microscope className="w-8 h-8 text-emerald-500" />,
-    color: "bg-emerald-50",
-  },
-  {
-    id: 4,
-    slug: "assistant-infirmier",
-    nom: "Assistant Infirmier d'État",
-    complet: "Brevet d'État d'Assistant Infirmier",
-    description:
-      "Maîtrisez les gestes techniques essentiels. Soutenez l'équipe médicale dans l'administration des soins et le maintien de l'hygiène hospitalière.",
-    icon: <Database className="w-8 h-8 text-blue-500" />, // Ou un icône de soin
-    color: "bg-blue-50",
-  },
-  {
-    id: 5,
-    slug: "aide-soignant",
-    nom: "Aide-Soignant",
-    complet: "Certificat d'Aptitude Aide-Soignant",
-    description:
-      "L'humain au cœur du métier. Assurez le confort, l'hygiène et le soutien moral des patients pour faciliter leur rétablissement au quotidien.",
-    icon: <Heart className="w-8 h-8 text-orange-500" />, // Pense à importer Heart
-    color: "bg-orange-50",
-  },
-];
 
 export default function Filieres() {
   return (
