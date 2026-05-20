@@ -1,5 +1,6 @@
 import React from "react";
 import { Handshake } from "lucide-react"; // Pour l'icône de partenariat
+import { Link } from "react-router-dom";
 
 const Partenaires = () => {
   // Liste des partenaires (tu pourras ajouter les logos plus tard)
@@ -73,17 +74,20 @@ const Partenaires = () => {
         <div className="mt-16 p-8 bg-emerald-900 rounded-[2.5rem] text-white flex flex-col md:flex-row items-center gap-8 shadow-2xl shadow-emerald-200">
           <div className="flex-1">
             <h3 className="text-2xl font-bold mb-2">
-              Partenariat Spécial 3FPT
+              Partenariat Spécial 3FPT, Mont Rolant et la Marie de Thies
             </h3>
             <p className="text-emerald-100/80 leading-relaxed">
-              Grâce à notre collaboration avec le <strong>3FPT</strong>, nos
-              étudiants bénéficient de programmes de bourses et de financements
-              pour faciliter leur accès aux formations d'excellence en santé.
+              Grâce à notre collaboration avec ces derniers, nos étudiants
+              bénéficient de programmes de bourses et de financements pour
+              faciliter leur accès aux formations d'excellence en santé.
             </p>
           </div>
-          <button className="px-8 py-4 bg-white text-emerald-900 rounded-2xl font-black hover:bg-emerald-50 transition-colors whitespace-nowrap">
+          <Link
+            to={"/bourse"}
+            className="px-8 py-4 bg-white text-emerald-900 rounded-2xl font-black hover:bg-emerald-50 transition-colors whitespace-nowrap"
+          >
             En savoir plus sur les bourses
-          </button>
+          </Link>
         </div>
       </div>
     </section>

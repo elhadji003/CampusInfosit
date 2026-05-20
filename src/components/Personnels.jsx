@@ -57,11 +57,11 @@ export default function Personnels() {
       genre: "F",
     },
     {
-      first_name: "Bineta",
-      last_name: "KA",
+      first_name: "Babacar",
+      last_name: "Seck",
       role: "chef_section",
-      email: "kabineta248@gmail.com",
-      genre: "F",
+      email: "seckndane959@gmail.com",
+      genre: "M",
     },
     {
       first_name: "Jacqueline Marame",
@@ -233,7 +233,7 @@ export default function Personnels() {
                     >
                       <Mail size={20} />
                     </a>
-                    <button
+                    {/* <button
                       className={`w-11 h-11 rounded-xl flex items-center justify-center transition-all ${
                         isDG
                           ? "bg-slate-800 text-blue-400 hover:bg-blue-600 hover:text-white"
@@ -241,7 +241,7 @@ export default function Personnels() {
                       }`}
                     >
                       <Phone size={20} />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>

@@ -45,11 +45,6 @@ export default function Navbar() {
 
         {/* Buttons section */}
         <div className="flex items-center gap-3">
-          <button className="hidden md:flex lg:flex items-center gap-2 bg-emerald-50 text-emerald-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-white hover:scale-105 transition-all active:scale-95 shadow-md">
-            <LogIn size={18} />
-            <span className="sm:inline">Connexion</span>
-          </button>
-
           <Link
             to={"/alumni"}
             className="hidden md:flex lg:flex items-center gap-2 bg-emerald-50 text-emerald-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-white hover:scale-105 transition-all active:scale-95 shadow-md"

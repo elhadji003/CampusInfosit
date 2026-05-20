@@ -12,7 +12,6 @@ import {
 import { Link } from "react-router-dom";
 import { filieresData } from "./FilieresData";
 
-
 export default function Filieres() {
   return (
     <section id="filieres" className="py-20 bg-white">
@@ -20,7 +19,8 @@ export default function Filieres() {
         {/* Header de la section */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4">
-            Nos <span className="text-emerald-600">Filières</span> d'Excellence
+            Nos {filieresData.length} {""}
+            <span className="text-emerald-600">Filières</span> d'Excellence
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Choisissez un parcours adapté à vos ambitions professionnelles. Des

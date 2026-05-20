@@ -10,6 +10,7 @@ import Contact from "../pages/Contact";
 import Alumni from "../pages/Alumni";
 import Administration from "../pages/Administration";
 import AlumniRegistration from "../pages/AlumniRegistration";
+import Bourse from "../pages/Bourse";
 
 export default function AppNavigator() {
   return (
@@ -24,6 +25,7 @@ export default function AppNavigator() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/alumni" element={<Alumni />} />
         <Route path="/alumni/registration" element={<AlumniRegistration />} />
+        <Route path="/bourse" element={<Bourse />} />
         {/* filieres */}
       </Route>
     </Routes>

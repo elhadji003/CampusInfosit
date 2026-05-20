@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   GraduationCap,
@@ -9,8 +9,20 @@ import {
   Send,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { alumniService } from "../services/api";
 
 const Alumni = () => {
+  const [alumnis, setAlumnis] = useState([]);
+
+  useEffect(() => {
+    alumniService
+      .getAll()
+      .then((data) => setAlumnis(data))
+      .catch((err) => console.log("Oups :", err));
+  }, []);
+
+  console.log("Alumni :", alumnis);
+
   const successStories = [
     {
       name: "Awa Diop",

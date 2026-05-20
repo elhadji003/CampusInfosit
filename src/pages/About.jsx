@@ -27,7 +27,7 @@ export default function Apropos() {
     },
     {
       label: "Professionnels formés",
-      value: "1500+",
+      value: "1000+",
       icon: <Award className="text-emerald-500" />,
     },
   ];

@@ -130,8 +130,8 @@ const Home = () => {
       <section className="bg-emerald-900 py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center relative z-10">
           {[
-            { label: "Étudiants", value: "1,200+", icon: <Users size={28} /> },
-            { label: "Filières", value: "8", icon: <BookOpen size={28} /> },
+            { label: "Étudiants", value: "1,000+", icon: <Users size={28} /> },
+            { label: "Filières", value: "7", icon: <BookOpen size={28} /> },
             { label: "Diplômés", value: "500+", icon: <Award size={28} /> },
             { label: "Réussite", value: "95%", icon: <Clock size={28} /> },
           ].map((stat, i) => (
