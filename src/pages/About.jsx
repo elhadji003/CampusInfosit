@@ -166,7 +166,7 @@ export default function Apropos() {
                 <MapPin size={14} /> Notre Ancrage à Thiès
               </div>
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
-                Un campus moderne au cœur de la{" "}
+                Un etablissement moderne au cœur de la{" "}
                 <span className="text-emerald-600">Cité du Rail</span>.
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg">

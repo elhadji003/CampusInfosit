@@ -21,11 +21,11 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <img
             src={Logo}
-            alt="CampusInfosits Logo"
+            alt="Infosits Logo"
             className="h-12 w-12 bg-white p-1 rounded-full shadow-inner object-contain"
           />
           <span className="font-extrabold text-2xl tracking-tight hidden sm:block">
-            Campus<span className="text-emerald-200">Infosits</span>
+            <span className="text-emerald-200 uppercase">Infosits</span>
           </span>
         </div>
 

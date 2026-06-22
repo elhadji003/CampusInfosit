@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-            Votre Campus, <br />
+            Votre Etablissement, <br />
             <span className="text-emerald-600">Toujours Connecté.</span>
           </h1>
           <p className="mt-6 text-lg text-gray-600 max-w-2xl">

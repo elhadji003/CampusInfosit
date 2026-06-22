@@ -17,29 +17,26 @@ export default function Administration() {
       role: "Vision & Stratégie",
       icon: <UserCheck className="text-white" />,
       color: "bg-emerald-800",
-      details: "Responsable de la conformité avec l'ANAQ-SUP et le CAMES.",
     },
     {
       title: "Directeur des Études",
       role: "Pédagogie & Examens",
       icon: <BookOpen className="text-white" />,
       color: "bg-emerald-600",
-      details: "Coordination des formateurs et des programmes LMD.",
     },
     {
-      title: "Secrétariat & Accueil",
-      role: "Administration & Inscriptions",
-      icon: <UserCog className="text-white" />,
-      color: "bg-emerald-500",
-      details: "Premier point de contact et gestion des dossiers étudiants.",
-    },
-    {
-      title: "Service Care (Stages)",
-      role: "Immersion Professionnelle",
+      title: "Coordinatrice Care",
+      role: "CARE",
       icon: <HeartPulse className="text-white" />,
       color: "bg-red-500",
-      details: "Gestion des stages cliniques dans les hôpitaux de Thiès.",
     },
+    {
+      title: "Personnels",
+      role: "Administrations",
+      icon: <UserCog className="text-white" />,
+      color: "bg-emerald-500",
+    },
+
     {
       title: "Pôle Support & Technique",
       isGroup: true,
@@ -93,15 +90,12 @@ export default function Administration() {
                   }`}
                 >
                   {!node.isGroup ? (
-                    <div className="bg-white p-6 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div className="bg-white p-6 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-md transition-shadow ms-4">
                       <h3 className="text-xl font-black text-gray-900">
                         {node.title}
                       </h3>
                       <p className="text-emerald-600 font-bold text-sm mb-2">
                         {node.role}
-                      </p>
-                      <p className="text-gray-500 text-sm leading-relaxed">
-                        {node.details}
                       </p>
                     </div>
                   ) : (

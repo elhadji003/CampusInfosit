@@ -46,7 +46,7 @@ const Contact = () => {
               {[
                 {
                   icon: <MapPin />,
-                  title: "Notre Campus",
+                  title: "Notre Etablissement",
                   content:
                     "Avenue Aynina Fall, Nº11, Rue 29 DVF, Thiès, Sénégal",
                 },

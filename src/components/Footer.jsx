@@ -10,7 +10,7 @@ export default function Footer() {
             {/* Colonne 1 : À propos */}
             <div>
               <h3 className="text-white text-xl font-bold mb-4">
-                Campus<span className="text-emerald-500">Infosits</span>
+                <span className="text-emerald-500 uppercase">Infosits</span>
               </h3>
               <p className="text-sm leading-relaxed">
                 La plateforme officielle d'information de l'ITS. Nous
@@ -65,9 +65,7 @@ export default function Footer() {
           </div>
 
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-xs">
-            <p>
-              © {new Date().getFullYear()} CampusInfosits. Tous droits réservés.
-            </p>
+            <p>© {new Date().getFullYear()} Infosits. Tous droits réservés.</p>
           </div>
         </div>
       </footer>

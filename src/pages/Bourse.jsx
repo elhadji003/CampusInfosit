@@ -51,7 +51,7 @@ export default function Bourse() {
   const info = obtenirDetails();
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 font-sans">
+    <div className="min-h-screen bg-gray-50 py-12 px-4 font-sans mt-6">
       <div className="max-w-4xl mx-auto">
         
         {/* En-tête ultra clair */}

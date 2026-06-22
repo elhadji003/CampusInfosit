@@ -31,7 +31,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-5xl font-extrabold text-gray-900 text-center mb-16 leading-tight">
           Explorez les moments forts de{" "}
-          <span className="text-emerald-600">CampusInfosits</span>
+          <span className="text-emerald-600">Infosits</span>
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
@@ -63,7 +63,7 @@ export default function Home() {
             </h3>
             <p className="text-gray-600 mb-8 max-w-md">
               Découvrez l'ambiance vibrante et les interactions quotidiennes qui
-              enrichissent l'expérience CampusInfosits.
+              enrichissent l'expérience Infosits.
             </p>
             <div className="w-full max-w-xl">
               <ImageCarousel
@@ -73,7 +73,7 @@ export default function Home() {
               />
             </div>
             <button className="mt-8 px-8 py-3 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition transform hover:-translate-y-1 shadow-md">
-              Explorer le campus
+              Explorer l'etablissement
             </button>
           </div>
 

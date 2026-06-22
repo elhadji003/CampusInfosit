@@ -22,6 +22,13 @@ export default function Personnels() {
       genre: "M",
     },
     {
+      first_name: "Taye Mah",
+      last_name: "Cissoko",
+      role: "care",
+      email: "mataye27@gmail.com",
+      genre: "F",
+    },
+    {
       first_name: "AbdouRahman",
       last_name: "Ndiaye",
       role: "pp",
@@ -36,13 +43,6 @@ export default function Personnels() {
       genre: "M",
     },
     {
-      first_name: "Taye Mah",
-      last_name: "Cissoko",
-      role: "care",
-      email: "mataye27@gmail.com",
-      genre: "F",
-    },
-    {
       first_name: "Ndeye Diama",
       last_name: "Diawara",
       role: "caissier",
@@ -52,9 +52,16 @@ export default function Personnels() {
     {
       first_name: "Ndiaté",
       last_name: "Diaw",
-      role: "chef_section",
+      role: "Asistante",
       email: "diawndiate@gmail.com",
       genre: "F",
+    },
+    {
+      first_name: "Alassane",
+      last_name: "Fall",
+      role: "Responsable de la tenue, du suivi et de la mise à jour des dossiers administratifs des etudiants",
+      email: "alassane@gmail.com",
+      genre: "M",
     },
     {
       first_name: "Babacar",
@@ -111,7 +118,7 @@ export default function Personnels() {
     dg: "Directeur Général",
     de: "Directeur des Études",
     gs_comptable: "Gestionnaire Comptable",
-    care: "Service Care / Stages",
+    care: "Coordinatrice CARE",
     pp: "Professeur Principal",
     caissier: "Caissière",
     chef_section: "Chef de Section",

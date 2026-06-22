@@ -20,6 +20,8 @@ export default function FiliereDetail() {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const [join, setJoin] = useState(false);
+
   console.log("Data :", data);
 
   if (!data)
@@ -210,19 +212,45 @@ export default function FiliereDetail() {
           </div>
 
           <div className="flex-1">
-            <div className="sticky top-32 p-10 bg-emerald-900 text-white rounded-[3rem] shadow-2xl">
-              <h3 className="text-2xl font-black mb-4 text-center">
+            <div className="sticky top-32 rounded-[3rem] bg-gradient-to-br from-emerald-900 to-emerald-800 p-10 text-white shadow-2xl border border-emerald-700/40">
+              <div className="flex justify-center mb-4">
+                <span className="px-4 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-200 text-sm font-semibold">
+                  Rentrée Octobre 2026
+                </span>
+              </div>
+
+              <h3 className="text-3xl font-black text-center leading-tight mb-4">
                 Inscriptions Ouvertes
               </h3>
-              <p className="text-emerald-100 text-center mb-8">
-                Réservez votre place pour la rentrée 2026 à l'INFOSITS.
+
+              <p className="text-emerald-100/90 text-center mb-8 leading-relaxed">
+                Rejoignez nos formations en santé et développez des compétences
+                essentielles pour les métiers du secteur médical et paramédical.
               </p>
-              <button className="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-white rounded-2xl font-black transition-all shadow-xl mb-4">
-                Postuler Maintenant
+
+              <button
+                onClick={() => setJoin(!join)}
+                className="
+        w-full py-4 rounded-2xl font-black text-lg
+        bg-emerald-500 hover:bg-emerald-400
+        transition-all duration-300
+        shadow-lg hover:shadow-emerald-500/30
+        hover:scale-[1.02]
+        active:scale-[0.98]
+      "
+              >
+                {join ? "Appelez : 77 123 45 67" : "S'inscrire en ligne"}
               </button>
-              <button className="w-full py-4 bg-white/10 hover:bg-white/20 text-white rounded-2xl font-bold transition-all border border-white/20">
-                Contacter un conseiller
-              </button>
+
+              <div className="mt-6 text-center">
+                <p className="text-sm text-emerald-200/80">
+                  Besoin d’informations ?
+                </p>
+
+                <p className="font-semibold mt-1">
+                  Veuillez contacter l’administration
+                </p>
+              </div>
             </div>
           </div>
         </div>

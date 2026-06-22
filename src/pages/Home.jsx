@@ -34,6 +34,10 @@ const Home = () => {
         />
       </header>
 
+      <h1 className="text-center mb-8 text-black text-4xl font-extrabold bg-emerald-200 px-4 py-3 rounded-md animate-pulse">
+        Institut de Formation en Science Infirmière et Technique Sanitaire
+      </h1>
+
       {/* --- SECTION HERO AMÉLIORÉE --- */}
       <section className="relative pb-20 lg:pb-32 px-6 overflow-hidden">
         {/* Arrière-plan décoratif animé */}
@@ -161,7 +165,7 @@ const Home = () => {
                 Dernières <span className="text-emerald-600">Actualités</span>
               </h2>
               <p className="text-gray-500 mt-2">
-                Ne manquez rien de la vie sur votre campus.
+                Ne manquez rien de la vie sur votre etablissement.
               </p>
             </div>
             <Link
@@ -172,7 +176,7 @@ const Home = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[1, 2, 3].map((n) => (
               <article
                 key={n}
@@ -212,7 +216,7 @@ const Home = () => {
                 </div>
               </article>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
     </div>
