@@ -97,29 +97,6 @@ export default function Home() {
               S'engager avec nous
             </button>
           </div>
-
-          {/* Nouvelle Section: Ateliers et Projets (ancien Tech Lab) */}
-          <div className="lg:col-span-2 xl:col-span-3 bg-white rounded-[2.5rem] shadow-xl border border-gray-100 p-8 flex flex-col items-center text-center mt-10">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Projets & <span className="text-purple-600">Innovation</span>
-            </h3>
-            <p className="text-gray-600 mb-8 max-w-2xl">
-              Découvrez nos ateliers pratiques, nos projets de recherche et les
-              réalisations innovantes de nos étudiants et formateurs.
-            </p>
-            <div className="w-full max-w-3xl">
-              {" "}
-              {/* Carrousel un peu plus large */}
-              <ImageCarousel
-                images={imagesProjetsTechLab}
-                autoSlide={true}
-                slideInterval={6000}
-              />
-            </div>
-            <button className="mt-8 px-8 py-3 bg-purple-600 text-white rounded-full font-bold hover:bg-purple-700 transition transform hover:-translate-y-1 shadow-md">
-              Voir nos réalisations
-            </button>
-          </div>
         </div>
       </div>
     </div>

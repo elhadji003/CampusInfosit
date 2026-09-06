@@ -72,23 +72,6 @@ export default function Filieres() {
         </div>
 
         {/* Section Appel à l'action */}
-        <div className="mt-20 p-10 bg-emerald-600 rounded-[3rem] text-center text-white relative overflow-hidden">
-          <div className="relative z-10">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Vous hésitez sur votre choix ?
-            </h3>
-            <p className="mb-8 opacity-90 max-w-xl mx-auto">
-              Nos conseillers d'orientation sont disponibles pour vous guider
-              vers la filière qui correspond le mieux à votre projet de
-              carrière.
-            </p>
-            <button className="bg-white text-emerald-700 px-8 py-3 rounded-xl font-bold hover:bg-emerald-50 transition-colors shadow-lg">
-              Prendre rendez-vous
-            </button>
-          </div>
-          {/* Formes décoratives fond footer */}
-          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-emerald-500 rounded-full opacity-50"></div>
-        </div>
       </div>
     </section>
   );

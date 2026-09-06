@@ -22,11 +22,11 @@ export default function Apropos() {
     },
     {
       label: "Partenaires engagés",
-      value: "30+",
+      value: "10+",
       icon: <ShieldCheck className="text-emerald-500" />,
     },
     {
-      label: "Professionnels formés",
+      label: "etudiants formés",
       value: "1000+",
       icon: <Award className="text-emerald-500" />,
     },

@@ -28,8 +28,7 @@ export default function Footer() {
                   Sénégal
                 </li>
                 <li className="flex items-center gap-3">
-                  <Phone size={18} className="text-emerald-500" /> +221 33 000
-                  00 00
+                  <Phone size={18} className="text-emerald-500" /> +221 77 134 16 49
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail size={18} className="text-emerald-500" />{" "}

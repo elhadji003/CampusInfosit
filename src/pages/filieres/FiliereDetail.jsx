@@ -3,258 +3,173 @@ import { useParams, Link } from "react-router-dom";
 import {
   ArrowLeft,
   CheckCircle,
-  Award,
   Clock,
   GraduationCap,
-  Briefcase,
-  CreditCard,
-  Info,
-  AlertCircle,
+  Phone,
+  Calendar,
+  BookOpen,
 } from "lucide-react";
 import { filieresDetails } from "./filieres";
 import ModalImportant from "../../components/modal/ModalImportant";
 
 export default function FiliereDetail() {
-  const { id } = useParams(); // Récupère l'id de l'URL
+  const { id } = useParams();
   const data = filieresDetails[id];
 
   const [isOpen, setIsOpen] = useState(false);
+  const [showContact, setShowContact] = useState(false);
+  const [selectedYear, setSelectedYear] = useState("annee1");
 
-  const [join, setJoin] = useState(false);
-
-  console.log("Data :", data);
-
-  if (!data)
+  if (!data) {
     return (
-      <div className="pt-40 text-center text-2xl font-bold">
-        Filière non trouvée...
+      <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center px-6">
+        <h2 className="text-2xl font-bold text-slate-800 mb-4">
+          Filière non trouvée
+        </h2>
+        <Link
+          to="/filieres"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-700 text-white rounded-xl font-semibold hover:bg-emerald-800 transition-all"
+        >
+          <ArrowLeft size={18} /> Voir toutes les filières
+        </Link>
       </div>
     );
+  }
+
+  // Filtrage des années disponibles
+  const years = [
+    { key: "annee1", label: "1ère Année", component: data.component_annee1 },
+    { key: "annee2", label: "2ème Année", component: data.component_annee2 },
+    { key: "annee3", label: "3ème Année", component: data.component_annee3 },
+  ].filter((y) => y.component);
+
+  // Récupération de l'élément JSX de l'année active
+  const activeYearData = years.find((y) => y.key === selectedYear);
 
   return (
-    <div className="min-h-screen bg-white pt-24 pb-20">
+    <div className="min-h-screen bg-slate-50 text-slate-800 pt-24 pb-20 font-sans antialiased">
       <div className="max-w-7xl mx-auto px-6">
         <Link
           to="/filieres"
-          className="inline-flex items-center gap-2 text-emerald-600 font-bold mb-8 hover:gap-3 transition-all"
+          className="inline-flex items-center gap-2 text-slate-600 font-semibold mb-8 hover:text-emerald-700 transition-colors"
         >
-          <ArrowLeft size={20} /> Retour aux filières
+          <ArrowLeft size={18} /> Retour à l'offre de formation
         </Link>
 
-        <div className="flex flex-col lg:flex-row gap-16">
+        {/* En-tête de la formation */}
+        <div className="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm mb-10">
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <span className="px-3 py-1 bg-emerald-50 text-emerald-800 text-xs font-bold uppercase tracking-wider rounded-md border border-emerald-100">
+              {data.diplome}
+            </span>
+            <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-md flex items-center gap-1.5">
+              <Clock size={14} /> Durée : {data.duree}
+            </span>
+            <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-md flex items-center gap-1.5">
+              <GraduationCap size={14} /> Prérequis : {data.niveau}
+            </span>
+          </div>
+
+          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+            {data.nom}
+          </h1>
+          <p className="text-slate-600 text-base md:text-lg leading-relaxed max-w-4xl">
+            {data.description}
+          </p>
+        </div>
+
+        {/* Contenu & Inscription */}
+        <div className="flex flex-col lg:flex-row gap-12">
+          {/* Programme Pédagogique */}
           <div className="flex-[2]">
-            <h1 className="text-4xl md:text-6xl font-black text-gray-900 mb-6">
-              {data.nom} <br />
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed mb-12">
-              {data.description}
-            </p>
-
-            <div className="flex gap-4 mb-6 bg-blue-400 w-fit text-white px-4 py-3 rounded-md animate-pulse duration-75 hover:-translate-y-2">
-              <button onClick={() => setIsOpen(true)}>
-                Lire les conditions d'inscription
-              </button>
-              <AlertCircle />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-              <div className="p-8 bg-gray-50 rounded-[2rem] border border-gray-100">
-                <Clock className="text-emerald-600 mb-4" size={32} />
-                <h4 className="font-bold text-gray-900">Durée</h4>
-                <p className="text-gray-500">{data.duree}</p>
-              </div>
-              <div className="p-8 bg-gray-50 rounded-[2rem] border border-gray-100">
-                <Award className="text-emerald-600 mb-4" size={32} />
-                <h4 className="font-bold text-gray-900">Diplôme</h4>
-                <p className="text-gray-500">{data.diplome}</p>
-              </div>
-              <div className="p-8 bg-gray-50 rounded-[2rem] border border-gray-100">
-                <GraduationCap className="text-emerald-600 mb-4" size={32} />
-                <h4 className="font-bold text-gray-900">Niveau</h4>
-                <p className="text-gray-500">{data.niveau}</p>
-              </div>
-            </div>
-
-            {/* --- BLOC PAIEMENT OPTIMISÉ --- */}
-            <div className="p-8 bg-emerald-50/50 rounded-[2rem] border border-emerald-100 shadow-sm mb-8">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="p-3 bg-emerald-600 rounded-xl text-white">
-                  <CreditCard size={24} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-black text-gray-900 leading-none">
-                    Détails Financiers
-                  </h3>
-                  <p className="text-sm text-emerald-700 font-medium">
-                    Tarifs et modalités de paiement
-                  </p>
-                </div>
+            <div className="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm">
+              <div className="border-b border-slate-100 pb-6 mb-6">
+                <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                  <BookOpen className="text-emerald-700" size={22} />
+                  Programme d'Enseignement
+                </h2>
               </div>
 
-              <div className="space-y-4">
-                {data.paiement.map((p, i) => {
-                  // On normalise le test pour détecter si c'est une mensualité
-                  const isMensualite = p.type
-                    .toLowerCase()
-                    .includes("mensualite");
-
-                  return (
-                    <div
-                      key={i}
-                      className="flex justify-between items-center p-4 bg-white rounded-2xl border border-gray-100 group hover:border-emerald-300 transition-all shadow-sm"
+              {/* Onglets d'années */}
+              {years.length > 1 && (
+                <div className="flex gap-2 mb-8 bg-slate-100 p-1.5 rounded-xl">
+                  {years.map((year) => (
+                    <button
+                      key={year.key}
+                      onClick={() => setSelectedYear(year.key)}
+                      className={`flex-1 py-2.5 px-4 rounded-lg font-semibold text-sm transition-all ${
+                        selectedYear === year.key
+                          ? "bg-white text-emerald-800 shadow-sm font-bold"
+                          : "text-slate-600 hover:text-slate-900"
+                      }`}
                     >
-                      <div className="flex flex-col">
-                        <div className="flex items-center gap-2">
-                          <span className="font-bold text-gray-800 capitalize">
-                            {p.type}
-                            <em className="font-semibold"> {p.niveau}</em>
-                          </span>
-
-                          {p.montantReduit ? (
-                            <span className="text-[9px] bg-red-100 text-red-600 px-2 py-0.5 rounded-full font-black animate-pulse">
-                              PROMO
-                            </span>
-                          ) : (
-                            ""
-                          )}
-                        </div>
-                      </div>
-
-                      <div className="text-right">
-                        <div className="flex flex-col items-end">
-                          {p.montantReduit ? (
-                            <>
-                              <span className="text-xs text-gray-400 line-through decoration-red-400">
-                                {p.montant.toLocaleString()} FCFA
-                              </span>
-                              <div className="flex items-baseline text-emerald-600">
-                                <span className="text-xl font-black">
-                                  {p.montantReduit.toLocaleString()}
-                                </span>
-                                <span className="ml-1 text-[10px] font-bold uppercase">
-                                  FCFA {isMensualite && "/ mois"}
-                                </span>
-                              </div>
-                            </>
-                          ) : (
-                            <div className="flex items-baseline text-emerald-600">
-                              <span className="text-xl font-black">
-                                {p.montant.toLocaleString()}
-                              </span>
-                              <span className="ml-1 text-[10px] font-bold text-emerald-900/40 uppercase">
-                                FCFA {isMensualite && "/ mois"}
-                              </span>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="mt-4 flex justify-between items-center p-4 bg-white rounded-2xl border border-gray-100 group hover:border-emerald-300 transition-all shadow-sm">
-                {data.note}
-              </div>
-
-              {/* Petit bandeau d'information supplémentaire */}
-              <div className="mt-8 flex gap-3 p-4 bg-blue-50 rounded-2xl text-blue-800 text-xs leading-relaxed">
-                <Info className="shrink-0" size={16} />
-                <p>
-                  Les frais d'inscription incluent l'assurance étudiante et
-                  l'accès à la bibliothèque numérique pour toute l'année
-                  académique.
-                </p>
-              </div>
-              <div className="mt-4">
-                <h1 className="text-sm font-semibold underline text-red-500">
-                  NB :
-                </h1>
-                <p className="text-sm text-red-500 font-bold">
-                  Les frais d’inscription déjà versés sont non remboursables.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                  Programme
-                </h3>
-                <div className="space-y-3">
-                  {data.programme.map((p, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center gap-3 p-4 bg-white border border-gray-100 rounded-xl"
-                    >
-                      <CheckCircle className="text-emerald-500" size={18} />
-                      <span className="text-gray-700 font-medium">{p}</span>
-                    </div>
+                      {year.label}
+                    </button>
                   ))}
                 </div>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                  Débouchés
-                </h3>
-                <div className="space-y-3">
-                  {data.debouches.map((d, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center gap-3 p-4 bg-emerald-50/50 rounded-xl"
-                    >
-                      <Briefcase className="text-emerald-600" size={18} />
-                      <span className="text-emerald-900 font-medium">{d}</span>
-                    </div>
-                  ))}
-                </div>
+              )}
+
+              {/* Rendu du composant JSX */}
+              <div className="prose prose-slate max-w-none">
+                {activeYearData ? (
+                  activeYearData.component
+                ) : (
+                  <div className="text-slate-500 italic">
+                    Aucun programme disponible pour cette année.
+                  </div>
+                )}
               </div>
             </div>
           </div>
 
+          {/* Panneau latéral d'admission */}
           <div className="flex-1">
-            <div className="sticky top-32 rounded-[3rem] bg-gradient-to-br from-emerald-900 to-emerald-800 p-10 text-white shadow-2xl border border-emerald-700/40">
-              <div className="flex justify-center mb-4">
-                <span className="px-4 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-200 text-sm font-semibold">
-                  Rentrée Octobre 2026
-                </span>
+            <div className="sticky top-28 rounded-3xl bg-slate-900 p-8 text-white shadow-xl border border-slate-800">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-6">
+                <Calendar size={14} />
+                <span>Session Académique 2026</span>
               </div>
 
-              <h3 className="text-3xl font-black text-center leading-tight mb-4">
-                Inscriptions Ouvertes
+              <h3 className="text-2xl font-bold leading-snug mb-3">
+                Procédure d'Admission
               </h3>
 
-              <p className="text-emerald-100/90 text-center mb-8 leading-relaxed">
-                Rejoignez nos formations en santé et développez des compétences
-                essentielles pour les métiers du secteur médical et paramédical.
+              <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                Les inscriptions pour la rentrée académique sont ouvertes.
               </p>
 
-              <button
-                onClick={() => setJoin(!join)}
-                className="
-        w-full py-4 rounded-2xl font-black text-lg
-        bg-emerald-500 hover:bg-emerald-400
-        transition-all duration-300
-        shadow-lg hover:shadow-emerald-500/30
-        hover:scale-[1.02]
-        active:scale-[0.98]
-      "
-              >
-                {join ? "Appelez : 77 123 45 67" : "S'inscrire en ligne"}
-              </button>
+              <div className="space-y-3 mb-8">
+                <div className="flex items-start gap-3 text-xs text-slate-300">
+                  <CheckCircle size={16} className="text-emerald-400 shrink-0 mt-0.5" />
+                  <span>Dossier d'inscription administratif</span>
+                </div>
+                <div className="flex items-start gap-3 text-xs text-slate-300">
+                  <CheckCircle size={16} className="text-emerald-400 shrink-0 mt-0.5" />
+                  <span>Validation des prérequis académiques</span>
+                </div>
+              </div>
 
-              <div className="mt-6 text-center">
-                <p className="text-sm text-emerald-200/80">
-                  Besoin d’informations ?
-                </p>
+              <div className="space-y-3">
+                <button
+                  onClick={() => setIsOpen(true)}
+                  className="w-full py-3.5 px-6 rounded-xl font-bold text-sm bg-emerald-700 hover:bg-emerald-600 text-white transition-all shadow-md active:scale-[0.98]"
+                >
+                  S'inscrire en ligne
+                </button>
 
-                <p className="font-semibold mt-1">
-                  Veuillez contacter l’administration
-                </p>
+                <button
+                  onClick={() => setShowContact(!showContact)}
+                  className="w-full py-3.5 px-6 rounded-xl font-semibold text-sm bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all flex items-center justify-center gap-2"
+                >
+                  <Phone size={16} />
+                  {showContact ? "+221 77 123 45 67" : "Contacter le secrétariat"}
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <ModalImportant isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </div>
   );
