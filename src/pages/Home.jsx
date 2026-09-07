@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Logo from "../assets/Logo.png";
+import Logo from "../assets/image/Logo.png";
 import LogoSn from "../assets/image/senegal.png";
 import LogoSante from "../assets/image/sante-logo.png";
 import InformationSection from "./InformationSection";

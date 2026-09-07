@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Si tu utilises React Router
 import { Menu, X, User, LogIn, User2, Contact2 } from "lucide-react"; // npm install lucide-react
-import Logo from "../assets/logo.png";
+import Logo from "../assets/image/Logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
