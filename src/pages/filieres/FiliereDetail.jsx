@@ -140,11 +140,17 @@ export default function FiliereDetail() {
 
               <div className="space-y-3 mb-8">
                 <div className="flex items-start gap-3 text-xs text-slate-300">
-                  <CheckCircle size={16} className="text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle
+                    size={16}
+                    className="text-emerald-400 shrink-0 mt-0.5"
+                  />
                   <span>Dossier d'inscription administratif</span>
                 </div>
                 <div className="flex items-start gap-3 text-xs text-slate-300">
-                  <CheckCircle size={16} className="text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle
+                    size={16}
+                    className="text-emerald-400 shrink-0 mt-0.5"
+                  />
                   <span>Validation des prérequis académiques</span>
                 </div>
               </div>
@@ -162,7 +168,9 @@ export default function FiliereDetail() {
                   className="w-full py-3.5 px-6 rounded-xl font-semibold text-sm bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all flex items-center justify-center gap-2"
                 >
                   <Phone size={16} />
-                  {showContact ? "+221 77 123 45 67" : "Contacter le secrétariat"}
+                  {showContact
+                    ? "+221 77 134 16 49"
+                    : "Contacter l'etablissement"}
                 </button>
               </div>
             </div>

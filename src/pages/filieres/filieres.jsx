@@ -2,7 +2,6 @@ import FicheAIDE from "./fiches/FicheAIDE";
 import FicheAIE from "./fiches/FicheAIE";
 import FicheAIE2 from "./fiches/FicheAIE2";
 import FicheDelegue from "./fiches/FicheDelegue";
-import FicheDVS from "./fiches/FicheDVS";
 import FicheIDE2 from "./fiches/FicheIDE2";
 import FicheIDE_SFE3 from "./fiches/FicheIDE_SFE3";
 import FicheSecretaire from "./fiches/FicheSecretaire";

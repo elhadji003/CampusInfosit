@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import imageAbout from "../assets/image/about.jpg";
 import MapSection from "../components/MapSection";
 import Partenaires from "../components/Partenaires";
+import sagefemme from "../assets/image/sagefemme.png"
 
 export default function Apropos() {
   const stats = [
@@ -206,7 +207,7 @@ export default function Apropos() {
               <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white transform -rotate-1">
                 {/* Tu peux remplacer cette image par une photo réelle du bâtiment ou une carte stylisée de Thiès */}
                 <img
-                  src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800"
+                  src={sagefemme}
                   alt="Campus de Thiès"
                   className="w-full h-[500px] object-cover"
                 />

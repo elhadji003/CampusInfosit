@@ -11,14 +11,14 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Logo from "../assets/Logo.png";
 import LogoSn from "../assets/image/senegal.png";
 import LogoSante from "../assets/image/sante-logo.png";
-import Infosits from "../assets/image/Infosits.jpg";
 import InformationSection from "./InformationSection";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 antialiased font-sans py-0 lg:py-8">
+    <div className="min-h-screen bg-slate-50 text-slate-800 antialiased font-sans py-8 lg:py-8">
       {/* --- ENTÊTE INSTITUTIONNEL --- */}
       <header className="bg-white border-b border-slate-100 py-6 px-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -121,7 +121,7 @@ const Home = () => {
             <div className="relative bg-gradient-to-tr from-emerald-100 to-teal-50 p-4 rounded-3xl border border-emerald-100/50 shadow-2xl">
               <div className="bg-white p-2 rounded-2xl overflow-hidden border border-slate-100">
                 <img
-                  src="https://illustrations.popsy.co/emerald/working-from-home.svg"
+                  src={Logo}
                   alt="Espace de formation en ligne"
                   className="w-full h-auto rounded-xl object-cover"
                 />

@@ -136,8 +136,8 @@ export default function FicheIDE2() {
           </li>
         </ul>
 
-        <div className="mt-3 bg-amber-50 p-3 rounded border border-amber-200 text-amber-900 text-xs sm:text-sm flex items-start">
-          <span className="mr-2 font-bold shrink-0">
+        <div className="mt-3 bg-amber-50 p-3 rounded border border-amber-200 text-amber-900 text-xs sm:text-sm flex-col flex items-start">
+          <span className="mr-2 my-4 font-bold shrink-0">
             📚 Obligation Matérielle :
           </span>
           <div>

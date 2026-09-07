@@ -28,7 +28,7 @@ export default function FicheAIE() {
           Fiche de Renseignement — 1ère Année
         </p>
         <p className="text-gray-500 text-xs">
-          Assistant Infirmier d'État (Niveau Troisième — 2 ans)
+          Assistant Infirmier d'État (Niveau BFEM — 2 ans)
         </p>
         <p className="text-gray-400 text-xs mt-1">Année Académique 2026-2027</p>
       </div>
@@ -132,8 +132,8 @@ export default function FicheAIE() {
           </li>
         </ul>
 
-        <div className="mt-3 bg-amber-50 p-3 rounded border border-amber-200 text-amber-900 text-xs sm:text-sm flex items-start">
-          <span className="mr-2 font-bold shrink-0">
+        <div className="mt-3 bg-amber-50 p-3 rounded border border-amber-200 text-amber-900 text-xs sm:text-sm flex-col flex items-start">
+          <span className="mr-2 my-4 font-bold shrink-0">
             📚 Obligation Matérielle :
           </span>
           <div>

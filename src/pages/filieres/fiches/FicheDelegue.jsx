@@ -28,7 +28,8 @@ export default function FicheDelegue() {
           Fiche de Renseignement — Délégué Médical
         </p>
         <p className="text-gray-500 text-xs">
-          Niveau BAC — 12 MOIS — Certificat de Qualification Professionnelle (CQP)
+          Niveau BAC — 12 MOIS — Certificat de Qualification Professionnelle
+          (CQP)
         </p>
         <p className="text-gray-400 text-xs mt-1">Année Académique 2026-2027</p>
       </div>
@@ -56,7 +57,8 @@ export default function FicheDelegue() {
               30 000 F CFA / mois
             </span>
             <span className="text-xs text-amber-600 block mt-1">
-              ⚠️ À payer au plus tard le 05 de chaque mois (du mois de Novembre au mois d'Août 2027).
+              ⚠️ À payer au plus tard le 05 de chaque mois (du mois de Novembre
+              au mois d'Août 2027).
             </span>
           </div>
 
@@ -77,7 +79,8 @@ export default function FicheDelegue() {
               Conditions de Recrutement :
             </span>
             <p className="text-xs sm:text-sm text-gray-700 mt-1">
-              Recrutement par test et examen du dossier. Test ouvert à tout candidat âgé de 18 ans au moins.
+              Recrutement par test et examen du dossier. Test ouvert à tout
+              candidat âgé de 18 ans au moins.
             </p>
             <span className="text-xs text-blue-700 block mt-1 font-medium">
               Frais de Test : 2 000 F CFA (Admissibilité à partir de 12/20).
@@ -125,13 +128,14 @@ export default function FicheDelegue() {
           </li>
         </ul>
 
-        <div className="mt-3 bg-amber-50 p-3 rounded border border-amber-200 text-amber-900 text-xs sm:text-sm flex items-start">
-          <span className="mr-2 font-bold shrink-0">
+        <div className="mt-3 bg-amber-50 p-3 rounded border border-amber-200 text-amber-900 text-xs sm:text-sm flex-col flex items-start">
+          <span className="mr-2 my-4 font-bold shrink-0">
             📚 Obligation Matérielle :
           </span>
           <div>
             Chaque étudiant doit obligatoirement fournir{" "}
-            <strong>01 Rame de papier A4 (Double A)</strong> pour chaque année d'étude.
+            <strong>01 Rame de papier A4 (Double A)</strong> pour chaque année
+            d'étude.
           </div>
         </div>
       </div>
@@ -145,7 +149,8 @@ export default function FicheDelegue() {
           <li className="flex items-center">
             <span className="mr-2">📄</span>
             Le montant de la photocopie de documents personnels est de{" "}
-            <strong className="text-gray-900 mx-1">10 frs / Page</strong> au sein de l'institut.
+            <strong className="text-gray-900 mx-1">10 frs / Page</strong> au
+            sein de l'institut.
           </li>
         </ul>
       </div>
@@ -156,14 +161,17 @@ export default function FicheDelegue() {
           🛑 NB : Clause de non-remboursement
         </h4>
         <p className="text-xs sm:text-sm">
-          En cas de désistement, d'abandon ou de renvoi de l'étudiant à n'importe quel moment de l'année, les sommes déjà versées{" "}
+          En cas de désistement, d'abandon ou de renvoi de l'étudiant à
+          n'importe quel moment de l'année, les sommes déjà versées{" "}
           <strong>
-            restent la propriété de l'INFOSITS et ne peuvent en aucun cas être remboursées
+            restent la propriété de l'INFOSITS et ne peuvent en aucun cas être
+            remboursées
           </strong>
           .
         </p>
         <p className="text-xs mt-2 text-red-700 italic">
-          L'INFOSITS peut pendant la durée de la Formation, ajuster les Frais de Scolarité en fonction de charges financières nouvelles.
+          L'INFOSITS peut pendant la durée de la Formation, ajuster les Frais de
+          Scolarité en fonction de charges financières nouvelles.
         </p>
       </div>
     </div>
