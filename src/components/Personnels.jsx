@@ -125,7 +125,7 @@ export default function Personnels() {
     assistant: "Assistant Administratif",
     chef_mtn: "Chef Maintenance / IT",
     pointeur: "Surveillant",
-  };
+  }; 
 
   return (
     <section className="py-24 px-6 bg-gray-50/50">

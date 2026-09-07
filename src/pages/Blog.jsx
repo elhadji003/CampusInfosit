@@ -8,9 +8,11 @@ import vieDeux from "../assets/image/visite2.png";
 import vieTrois from "../assets/image/visite3.png";
 import vieQuatre from "../assets/image/visite4.png";
 import vieCinq from "../assets/image/visite5.png";
-import DonS from "../assets/image/image4.jpg";
-import DonSs from "../assets/image/image5.jpg";
-import DonSss from "../assets/image/image5.jpg";
+import prat1 from "../assets/image/prat1.png";
+import prat2 from "../assets/image/prat2.png";
+import prat3 from "../assets/image/prat3.png";
+import prat4 from "../assets/image/prat4.png";
+import prat5 from "../assets/image/prat5.png";
 import reussite1 from "../assets/image/reussite1.png";
 import reussite2 from "../assets/image/reussite2.png";
 import reussite3 from "../assets/image/reussite3.png";
@@ -19,7 +21,7 @@ import MomentsEtudiants from "./MomentsEtudiants";
 // Collections d'images structurées
 const imagesDiplomes = [reussite1, reussite2, reussite3];
 const imagesVisites = [vieUn, vieDeux, vieTrois, vieQuatre, vieCinq];
-const imagesPratiques = [DonS, DonSs, DonSss];
+const imagesPratiques = [prat1, prat2, prat3, prat4, prat5];
 
 export default function Home() {
   // État de la modale d'agrandissement d'image (Lightbox)
